@@ -12,6 +12,10 @@ const useStyle = makeStyles((theme) => ({
     margin: "1rem",
     padding: "1rem",
     borderRadius: "10px",
+    overflow: "auto",
+        '&::-webkit-scrollbar': {
+            display: "none"
+        },
   }
 }));
 
