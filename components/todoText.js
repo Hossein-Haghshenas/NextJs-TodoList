@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
         width: "14rem",
         height: "2.5rem",
         padding: "0.5rem",
-        margin: "1rem 0",
+        margin: "1rem 0 0",
         border: "1px solid #bdbdbd",
         borderRadius: "14px",
         backgroundColor: "#fafafa"
@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme) => ({
         '&::-webkit-scrollbar': {
             display: "none"
         },
-    },
-    todoChecked: {
-        backgroundColor: "#b7ffb7",
-        textDecoration: "line-through"
     },
     todoIcons: {
         display: "flex",
@@ -36,11 +32,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function TodoText({ todoText, todoIcon, checked, ...rest }) {
-    const { todoBox, todoBody, todoChecked, todoIcons } = useStyles();
+function TodoText({ todoText, todoIcon, ...rest }) {
+    const { todoBox, todoBody, todoIcons } = useStyles();
 
     return (
-        <Box className={`${todoBox} ${checked ? todoChecked : ""}`} {...rest} >
+        <Box className={todoBox} {...rest} >
             <Typography className={todoBody} >{todoText}</Typography>
             <Box className={todoIcons} >
                 {todoIcon}
