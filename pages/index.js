@@ -2,10 +2,10 @@ import Head from 'next/head'
 import { useState } from 'react';
 import { AiOutlinePlusCircle, AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai'
 
-import PageTitle from './../components/PageTitle';
-import TextInput from '../components/TodoInput';
-import TodoListContainer from '../components/TodoListContainer';
-import TodoText from '../components/TodoText';
+import PageTitle from '../components/pageTitle';
+import Input from '../components/input';
+import Container from '../components/container';
+import TodoText from '../components/todoText';
 
 // Change SSR to SSG
 
@@ -50,18 +50,18 @@ const Home = ({ data }) => {
         MyTodoList App
       </PageTitle>
 
-      <TodoListContainer>
+      <Container>
 
         {/* todo input */}
-        <TextInput variant="standard" placeholder="add new todo" value={todo}
+        <Input variant="standard" placeholder="add new todo" value={todo}
           onChange={(e) => setTodo(e.target.value)}
-          inputIcon={<AiOutlinePlusCircle onClick={handleAddTodo} />} />
+          leftIcon={<AiOutlinePlusCircle onClick={handleAddTodo} />} />
 
         {/* todo list */}
         <TodoText todoText="buy bread"
           onClick={(e) => handleTodoCheck(e)}
           todoIcon={<><AiOutlineDelete onClick={handleDelete} /><AiOutlineEdit onClick={handleEdit} /></>} />
-      </TodoListContainer>
+      </Container>
     </>
   )
 }
